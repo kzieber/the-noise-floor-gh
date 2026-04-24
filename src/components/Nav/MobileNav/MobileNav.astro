@@ -6,37 +6,35 @@ import navData from "@config/navData.json";
 import { Icon } from "astro-icon/components";
 ---
 
-<div id="mobile-nav__container">
+<div id='mobile-nav__container'>
 	<button
-		id="mobile-nav__burger"
-		aria-label="open navigation menu"
-		aria-haspopup="true"
-		aria-expanded="false"
-		class="primary-focus h-10 w-10 rounded-none"
-	>
+		id='mobile-nav__burger'
+		aria-label='open navigation menu'
+		aria-haspopup='true'
+		aria-expanded='false'
+		class='primary-focus h-10 w-10 rounded-none'>
 		<!-- hamburger icon to open menu -->
 		<Icon
-			name="tabler:menu-2"
-			class="m-auto inline-block h-8 w-8 stroke-current"
-			aria-hidden="true"
+			name='tabler:menu-2'
+			class='m-auto inline-block h-8 w-8 stroke-current'
+			aria-hidden='true'
 		/>
 	</button>
 	<div
-		id="mobile-nav__content"
-		class="whitepace-nowrap bg-base-50 text-base-900 fixed top-0 -right-72 z-20 hidden h-screen w-72 items-center overflow-x-hidden text-lg font-normal transition-all duration-300"
-	>
-		<div class="w-full px-2">
-			<div class="mx-1 my-2 flex w-full justify-end pr-4 pl-6">
-				<button id="mobile-nav__close" class="primary-focus p-2" aria-label="close navigation menu">
+		id='mobile-nav__content'
+		class='whitepace-nowrap bg-base-50 text-base-900 fixed top-0 -right-72 z-20 hidden h-screen w-72 items-center overflow-x-hidden text-lg font-normal transition-all duration-300'>
+		<div class='w-full px-2'>
+			<div class='mx-1 my-2 flex w-full justify-end pr-4 pl-6'>
+				<button id='mobile-nav__close' class='primary-focus p-2' aria-label='close navigation menu'>
 					<!-- "X" icon to close menu -->
-					<Icon name="tabler:x" class="h-8 w-8" />
+					<Icon name='tabler:x' class='h-8 w-8' />
 				</button>
 			</div>
 
 			<!-- nav items -->
-			<hr class="border-base-200 mx-1" />
+			<hr class='border-base-200 mx-1' />
 			<nav>
-				<ul class="mx-1 mt-2 text-xl">
+				<ul class='mx-1 mt-2 text-xl'>
 					{
 						// if dropdown exists, setup the dropdown, otherwise it is just a link
 						navData.map((navItem) =>
@@ -51,19 +49,15 @@ import { Icon } from "astro-icon/components";
 					}
 				</ul>
 			</nav>
-			<div class="mx-1 mt-2 w-full px-4">
-				<Button variant="outline" class="w-full" href="https://cosmicthemes.com/themes/horizon/">
-					Get Horizon
-				</Button>
-			</div>
+			<div class='mx-1 mt-2 w-full px-4'></div>
 		</div>
 	</div>
 
 	<!-- backdrop button to also close menu -->
 	<button
-		id="mobile-nav__backdrop"
-		class="mobile-nav__backdrop--fade-out fixed top-0 left-0 z-10 h-screen bg-black"
-		aria-label="close navigation menu"></button>
+		id='mobile-nav__backdrop'
+		class='mobile-nav__backdrop--fade-out fixed top-0 left-0 z-10 h-screen bg-black'
+		aria-label='close navigation menu'></button>
 </div>
 
 <script>
