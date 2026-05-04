@@ -10,10 +10,9 @@ const { href, newTab = false, ...rest } = Astro.props as Props;
 
 <a
 	href={href}
-	class="nav__link--base"
+	class='nav__link--base staatliches-regular'
 	target={newTab ? "_blank" : undefined}
 	rel={newTab ? "noopener noreferrer" : undefined}
-	{...rest}
->
+	{...rest}>
 	<slot />
 </a>

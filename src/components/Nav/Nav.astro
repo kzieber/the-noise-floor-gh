@@ -30,16 +30,16 @@ const { startStyle = "default", rest } = Astro.props as Props;
 				<!-- desktop nav menu -->
 				<div class='flex flex-auto justify-end lg:gap-4'>
 					<nav class='hidden md:block'>
-						<ul class='flex h-full items-center justify-center px-4 text-lg lg:gap-4'>
+						<ul class='flex h-full items-center justify-center px-4 text-xl lg:gap-4'>
 							{
 								// if dropdown exists, setup the dropdown, otherwise it is just a link
 								navData.map((navItem) =>
 									"dropdown" in navItem ? (
 										// non-mobile dropdown menu
-										<NavDropdown navItem={navItem} class='text-base-900 comfortaa-regular' />
+										<NavDropdown navItem={navItem} class='text-base-900 staatliches-regular' />
 									) : (
 										// normal nav link
-										<NavLink {navItem} class='comfortaa-regular h-10' />
+										<NavLink {navItem} class='staatliches-regular h-10' />
 									),
 								)
 							}
