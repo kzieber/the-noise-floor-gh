@@ -15,15 +15,15 @@ export type navItem = navLinkItem | navDropdownItem;
 const navConfig: navItem[] = [
 	{
 		text: "Home",
-		link: "/",
+		link: "/#",
 	},
-	{
-		text: "Brands",
-		link: "/products",
-	},
+	// {
+	// 	text: "Brands",
+	// 	link: "/products",
+	// },
 	{
 		text: "About",
-		link: "/about",
+		link: "/#about",
 	},
 	{
 		text: "Contact",
