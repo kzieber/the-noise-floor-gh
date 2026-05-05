@@ -49,8 +49,4 @@ export default defineConfig({
 			assetsInlineLimit: 0,
 		},
 	},
-
-	adapter: node({
-		mode: "standalone",
-	}),
 });
