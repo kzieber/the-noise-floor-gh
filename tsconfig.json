@@ -6,7 +6,7 @@
 		"strictNullChecks": true,
 		"allowJs": true,
 		"forceConsistentCasingInFileNames": true,
-		"jsx": "preserve",
+		"jsx": "react-jsx",
 		"paths": {
 			"@config/*": ["./src/config/*"],
 			"@js/*": ["./src/js/*"],
