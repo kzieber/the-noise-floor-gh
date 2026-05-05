@@ -1,0 +1,21 @@
+name: Publish
+on:
+  push:
+    branches: [pages]
+jobs:
+  publish:
+    runs-on: codeberg-tiny
+    steps:
+      - name: checkout repository with git actions
+        uses: actions/checkout@v5
+      - name: Install, build site with astro
+        uses: withastro/action@v5
+      - run: |
+          # Use your favorite static site generator here!
+          mkdir _site
+          cp *.html _site/
+      - uses: actions/git-pages@v2
+        with:
+          site: https://thenoisefloor.net/
+          token: ${{ forge.token }}
+          source: _site/
