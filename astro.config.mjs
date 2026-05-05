@@ -41,7 +41,7 @@ export default defineConfig({
 			},
 		}),
 	],
-
+	output: "static",
 	vite: {
 		plugins: [tailwindcss()],
 		// stop inlining short scripts to fix issues with ClientRouter: https://github.com/withastro/astro/issues/12804
