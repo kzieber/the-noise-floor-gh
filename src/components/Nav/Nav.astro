@@ -1,10 +1,9 @@
 ---
-import Button from "@components/Button/Button.astro";
-import MobileNav from "@components/Nav/MobileNav/MobileNav.astro";
-import NavDropdown from "@components/Nav/NavDropdown/NavDropdown.astro";
-import NavLink from "@components/Nav/NavLink.astro";
-import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
-import navData from "@config/navData.json";
+import MobileNav from "../../components/Nav/MobileNav/MobileNav.astro";
+import NavDropdown from "../../components/Nav/NavDropdown/NavDropdown.astro";
+import NavLink from "../../components/Nav/NavLink.astro";
+import SiteLogo from "../../components/SiteLogo/SiteLogo.astro";
+import navData from "../../config/navData.json";
 
 interface Props {
 	startStyle?: "default" | "white"; // if set to "white", the nav elements will be white until the page is scrolled down. Useful for background hero images.

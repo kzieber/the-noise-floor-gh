@@ -1,9 +1,9 @@
 ---
-import "@/styles/global.css";
+import "../styles/global.css";
 
-import Footer from "@components/Footer/Footer.astro";
-import Nav from "@components/Nav/Nav.astro";
-import BaseHead from "@layouts/BaseHead.astro";
+import Footer from "../components/Footer/Footer.astro";
+import Nav from "../components/Nav/Nav.astro";
+import BaseHead from "../layouts/BaseHead.astro";
 
 // heroImage and authorData are defined on blog posts
 // authorData could also be defined on the about author page
@@ -27,7 +27,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="fade">
+<html lang='en' transition:animate='fade'>
 	<head>
 		<BaseHead
 			type={type}
@@ -37,8 +37,8 @@ const {
 			noindex={noindex}
 		/>
 	</head>
-	<body id="body" class="bg-base-50 text-base-900">
-		<div class="min-h-[100lvh]">
+	<body id='body' class='bg-base-50 text-base-900'>
+		<div class='min-h-[100lvh]'>
 			<Nav startStyle={navStartStyle} />
 			<main>
 				<slot />

@@ -3,16 +3,15 @@
  * * Contact section for the website
  */
 
-import ContactForm from "@components/Forms/ContactForm.astro";
+import ContactForm from "../../components/Forms/ContactForm.astro";
 import { Image } from "astro:assets";
+import drumsImg from "../../assets/images/drums-img.jpg";
 
 interface Props {
 	class?: string;
 }
 
 const { class: className } = Astro.props as Props;
-
-import drumsImg from "@assets/images/drums-img.jpg";
 ---
 
 <section

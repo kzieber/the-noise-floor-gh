@@ -1,6 +1,6 @@
 ---
-import NavLink from "@components/Nav/NavLink.astro";
-import { type navDropdownItem } from "@config/navData.json";
+import NavLink from "../NavLink.astro";
+import { type navDropdownItem } from "../../../config/navData.json";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -10,29 +10,27 @@ interface Props {
 const { navItem } = Astro.props as Props;
 ---
 
-<li class="mobile-nav__dropdown group relative">
+<li class='mobile-nav__dropdown group relative'>
 	<button
 		class:list={[
 			"nav__link--base mobile-nav__dropdown-button flex w-full flex-1 items-center justify-between",
 		]}
-		type="button"
+		type='button'
 		aria-label={`${navItem.text} dropdown menu`}
-		aria-expanded="false"
-		aria-haspopup="true"
-	>
+		aria-expanded='false'
+		aria-haspopup='true'>
 		{navItem.text}
 		<Icon
-			name="tabler:chevron-down"
-			aria-hidden="true"
-			class="mobile-nav__dropdown-chevron size-6 transition-transform"
+			name='tabler:chevron-down'
+			aria-hidden='true'
+			class='mobile-nav__dropdown-chevron size-6 transition-transform'
 		/>
 	</button>
 
 	<div
-		class="mobile-nav__dropdown-content hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
-	>
-		<ul class="mb-2 transition-[height]">
-			{navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} class="ml-2" />)}
+		class='mobile-nav__dropdown-content hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out'>
+		<ul class='mb-2 transition-[height]'>
+			{navItem.dropdown.map((dropdownItem) => <NavLink navItem={dropdownItem} class='ml-2' />)}
 		</ul>
 	</div>
 </li>
