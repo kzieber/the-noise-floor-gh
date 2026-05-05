@@ -1,8 +1,35 @@
 ---
+export const prerender = false;
 import Button from "../../components/Button/Button.astro";
+import { actions } from "astro:actions";
+
+const result = Astro.getActionResult(actions.sendMessage);
 ---
 
-<form id='contact-form' name='contact form' class='flex h-full flex-col justify-between gap-4'>
+<form
+	id='contact-form'
+	name='contact form'
+	method='POST'
+	action={actions.sendMessage}
+	class='flex h-full flex-col justify-between gap-4'>
+	{
+		result && !result.error && (
+			<p>
+				<span class='inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 inset-ring inset-ring-green-600/20'>
+					Your message has been sent!
+				</span>
+			</p>
+		)
+	}
+	{
+		result && result.error && (
+			<p>
+				<span class='inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 inset-ring inset-ring-red-600/10'>
+					Something went wrong &#58;&#40;. Please refresh the page and try again
+				</span>
+			</p>
+		)
+	}
 	<input type='hidden' name='form-name' value='contact' />
 	<div>
 		<label for='contact-name' class='staatliches-regular text-lg uppercase'>Your Name</label>
@@ -24,7 +51,14 @@ import Button from "../../components/Button/Button.astro";
 		<label for='contact-date' class='staatliches-regular text-lg uppercase'
 			>What are you interested in learning?</label
 		>
-		<input type='text' class='form__input' name='date' id='contact-date' placeholder='' required />
+		<input
+			type='text'
+			name='interestedIn'
+			class='form__input'
+			id='contact-date'
+			placeholder=''
+			required
+		/>
 	</div>
 	<div>
 		<label for='contact-message' class='staatliches-regular text-lg uppercase'>Message </label>

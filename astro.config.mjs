@@ -1,11 +1,18 @@
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import compress from "@playform/compress";
 import icon from "astro-icon"; // https://www.astroicon.dev/guides/upgrade/v1/
+
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://kzieber.github.io",
+	env: {
+		schema: {
+			RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
+		},
+	},
 	integrations: [
 		compress({
 			HTML: true,
@@ -34,6 +41,7 @@ export default defineConfig({
 			},
 		}),
 	],
+
 	vite: {
 		plugins: [tailwindcss()],
 		// stop inlining short scripts to fix issues with ClientRouter: https://github.com/withastro/astro/issues/12804
@@ -41,4 +49,8 @@ export default defineConfig({
 			assetsInlineLimit: 0,
 		},
 	},
+
+	adapter: node({
+		mode: "standalone",
+	}),
 });

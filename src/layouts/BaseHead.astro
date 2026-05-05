@@ -1,7 +1,6 @@
 ---
 import Seo from "../components/Seo/Seo.astro";
 import siteData from "../config/siteData.json";
-import { type CollectionEntry } from "astro:content";
 import { ClientRouter } from "astro:transitions";
 
 export interface Props {
@@ -20,7 +19,7 @@ const { type = "general", title, description, image, noindex = false } = Astro.p
 
 <link rel='icon' href='src/assets/favicon_io/favicon.ico' type='image/x-icon' />
 <link rel='shortcut icon' href='/src/assets/favicon_io/favicon.ico' />
-<link rel='apple-touch-icon' sizes='180x180' href='/src/assets/favicon_io/apple-touch-icon' />
+<link rel='apple-touch-icon' sizes='180x180' href='src/assets/favicon_io/apple-touch-icon.png' />
 <link rel='manifest' href='/src/assets/favicon_io/site.webmanifest' />
 
 <!-- other -->
