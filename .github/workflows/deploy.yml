@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   build:
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
