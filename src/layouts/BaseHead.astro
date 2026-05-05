@@ -13,27 +13,10 @@ export interface Props {
 }
 
 const { type = "general", title, description, image, noindex = false } = Astro.props as Props;
-
-import CinzelDecorative from "@fontsource/cinzel-decorative/files/cinzel-decorative-latin-400-normal.woff2";
-import PlayfairDisplayVariable from "@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2";
-import RalewayVariable from "@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2";
-import WorkSansVariable from "@fontsource-variable/work-sans/files/work-sans-latin-wght-normal.woff2";
 ---
 
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width' initial-scale='1.0' />
-
-<!-- local font preload for better performance when not using ClientRouter -->
-<link rel='preload' href={WorkSansVariable} as='font' type='font/woff2' crossorigin='anonymous' />
-<link rel='preload' href={RalewayVariable} as='font' type='font/woff2' crossorigin='anonymous' />
-<link
-	rel='preload'
-	href={PlayfairDisplayVariable}
-	as='font'
-	type='font/woff2'
-	crossorigin='anonymous'
-/>
-<link rel='preload' href={CinzelDecorative} as='font' type='font/woff2' crossorigin='anonymous' />
 
 <link rel='icon' href='src/assets/favicon_io/favicon.ico' type='image/x-icon' />
 <link rel='shortcut icon' href='/src/assets/favicon_io/favicon.ico' />
