@@ -3,7 +3,7 @@ import { defineConfig, envField } from "astro/config";
 import compress from "@playform/compress";
 import icon from "astro-icon"; // https://www.astroicon.dev/guides/upgrade/v1/
 
-import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -41,7 +41,7 @@ export default defineConfig({
 			},
 		}),
 	],
-	output: "static",
+
 	vite: {
 		plugins: [tailwindcss()],
 		// stop inlining short scripts to fix issues with ClientRouter: https://github.com/withastro/astro/issues/12804
@@ -49,4 +49,6 @@ export default defineConfig({
 			assetsInlineLimit: 0,
 		},
 	},
+
+	adapter: netlify(),
 });

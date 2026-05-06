@@ -12,6 +12,7 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
+		"@astrojs/netlify": "^7.0.8",
 		"@astrojs/node": "^10.0.6",
 		"@iconify-json/tabler": "1.2.17",
 		"@tailwindcss/forms": "0.5.10",
