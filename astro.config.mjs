@@ -5,11 +5,9 @@ import icon from "astro-icon"; // https://www.astroicon.dev/guides/upgrade/v1/
 
 import netlify from "@astrojs/netlify";
 
-import node from "@astrojs/node";
-
 // https://astro.build/config
 export default defineConfig({
-	site: "https://kzieber.github.io",
+	site: "https://the-noise-floor.netlify.app/",
 	env: {
 		schema: {
 			RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
@@ -52,8 +50,5 @@ export default defineConfig({
 		},
 	},
 
-	adapter: node({
-		mode: "standalone",
-		middlewareMode: "edge",
-	}),
+	adapter: netlify(),
 });
