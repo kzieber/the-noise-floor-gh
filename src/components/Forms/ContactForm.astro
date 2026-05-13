@@ -9,6 +9,7 @@ const result = Astro.getActionResult(actions.sendMessage);
 <form
 	id='contact-form'
 	name='contact form'
+	data-netlify='true'
 	method='POST'
 	action={actions.sendMessage}
 	class='flex h-full flex-col justify-between gap-4'>
