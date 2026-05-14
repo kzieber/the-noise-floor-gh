@@ -4,6 +4,7 @@ import compress from "@playform/compress";
 import icon from "astro-icon"; // https://www.astroicon.dev/guides/upgrade/v1/
 
 import netlify from "@astrojs/netlify";
+import { build } from "astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
 			Image: false, // astro:assets handles this. Enabling this can dramatically increase build times
 			SVG: false, // astro-icon handles this
 		}),
+
 		icon({
 			// I include only the icons I use. This is because if you use SSR, ALL icons will be included (no bueno)
 			// https://www.astroicon.dev/reference/configuration#include
