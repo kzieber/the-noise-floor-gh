@@ -7,12 +7,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://the-noise-floor.netlify.app/",
-	env: {
-		schema: {
-			RESEND_API_KEY: envField.string({ context: "server", access: "secret" }),
-		},
-	},
+	site: "https://www.thenoisefloorjt.net/",
 	integrations: [
 		compress({
 			HTML: true,
