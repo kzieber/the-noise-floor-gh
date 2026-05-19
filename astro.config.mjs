@@ -3,8 +3,7 @@ import { defineConfig, envField } from "astro/config";
 import compress from "@playform/compress";
 import icon from "astro-icon"; // https://www.astroicon.dev/guides/upgrade/v1/
 
-import netlify from "@astrojs/netlify";
-import { build } from "astro";
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,5 +46,7 @@ export default defineConfig({
 		},
 	},
 
-	adapter: netlify(),
+	adapter: node({
+		mode: "standalone",
+	}),
 });
