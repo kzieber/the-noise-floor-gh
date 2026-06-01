@@ -12,16 +12,13 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@astrojs/netlify": "^7.0.8",
 		"@astrojs/node": "^10.1.1",
 		"@iconify-json/tabler": "1.2.17",
 		"@tailwindcss/forms": "0.5.10",
 		"@tailwindcss/vite": "4.1.5",
-		"@types/nodemailer": "^8.0.0",
 		"astro": "^6.2.2",
 		"astro-icon": "1.1.5",
 		"astro-seo": "0.8.4",
-		"nodemailer": "^8.0.9",
 		"tailwindcss": "4.1.5"
 	},
 	"devDependencies": {
