@@ -48,12 +48,13 @@ import Button from "../../components/Button/Button.astro";
 			placeholder=''
 			required></textarea>
 	</div>
-	<div class='flex justify-between'>
+	<div class='flex'>
 		<!-- Add before your submit button -->
 		<script src='https://js.hcaptcha.com/1/api.js' async defer></script>
 
 		<div class='h-captcha' data-sitekey='4984ef7a-17c0-4828-a638-9b1e7158f138' data-theme='light'>
 		</div>
+
 		<Button
 			variant='primary'
 			id='submit-btn'
