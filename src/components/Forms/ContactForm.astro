@@ -54,7 +54,8 @@ import Button from "../../components/Button/Button.astro";
 
 		<div class='h-captcha' data-sitekey='4984ef7a-17c0-4828-a638-9b1e7158f138' data-theme='light'>
 		</div>
-
+	</div>
+	<div class='flex'>
 		<Button
 			variant='primary'
 			id='submit-btn'
@@ -62,39 +63,39 @@ import Button from "../../components/Button/Button.astro";
 			class='staatliches-regular w-full flex-1 px-10 md:w-fit'>Submit</Button
 		>
 	</div>
-</form>
 
-<script>
-	const form = document.getElementById("#contact-form") as HTMLFormElement;
-	const submit = document.getElementById("#submit-btn") as HTMLButtonElement;
+	<script>
+		const form = document.getElementById("#contact-form") as HTMLFormElement;
+		const submit = document.getElementById("#submit-btn") as HTMLButtonElement;
 
-	form.addEventListener("submit", async (e) => {
-		e.preventDefault();
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
 
-		submit.textContent = "Sending...";
-		submit.disabled = true;
+			submit.textContent = "Sending...";
+			submit.disabled = true;
 
-		const formData = new FormData(form);
-		const data = Object.fromEntries(formData.entries());
+			const formData = new FormData(form);
+			const data = Object.fromEntries(formData.entries());
 
-		try {
-			const response = await fetch("https://formgrid.dev/api/f/7wg3h0hj", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
-			});
+			try {
+				const response = await fetch("https://formgrid.dev/api/f/7wg3h0hj", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(data),
+				});
 
-			console.log("response: ", response);
+				console.log("response: ", response);
 
-			if (response.ok) {
-				form.reset();
-			} else {
-				alert("Something went wrong. Refresh the page and try again");
+				if (response.ok) {
+					form.reset();
+				} else {
+					alert("Something went wrong. Refresh the page and try again");
+				}
+			} catch (err) {
+				console.error(err);
 			}
-		} catch (err) {
-			console.error(err);
-		}
-	});
-</script>
+		});
+	</script>
+</form>
