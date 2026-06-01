@@ -17,6 +17,7 @@ interface Props {
 	onclick?: any; // any onclick events
 	class?: string; // any additional classes
 	rest?: any; // catch-all for any additional parameters, such as "aria-label"
+	id?: string;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
 	href,
 	arrow = "none",
 	onclick,
+	id,
 	class: className,
 	...rest
 } = Astro.props as Props;
@@ -94,6 +96,7 @@ const {
 				},
 			]}
 			type={type}
+			id={id}
 			onclick={onclick}
 			{...rest}>
 			{arrow === "left" && (
